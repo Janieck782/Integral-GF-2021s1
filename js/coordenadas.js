@@ -23,6 +23,23 @@ let dem = new demanda;
 let auxUbi;
 let auxDem;
 
+//distancia
+let matrizDist;
+
+function guardar(enlace){
+    let aus = document.getElementById("demanda").value;
+    if(aus==""){
+    alert("No se ha cargado el archivo")
+    }else{
+    enlace.disabled = 'disabled';
+    console.log("El archivo se ha cargado con exito")
+    guardarUbicaciones();
+    guardarDemanda();
+    }
+
+}
+
+
 function guardarUbicaciones() {
     auxUbi = document.getElementById("coordenadas").value;
     registrarUbicaiones(auxUbi);
@@ -53,13 +70,13 @@ function registrarUbicaiones(aux) {
         ubi.y.push(Number.parseInt(txt[m][3]));
     }
 
-
+    Distancias();
 }
 
 function guardarDemanda() {
     auxDem = document.getElementById("demanda").value;
     
-    registrarDemanda(auxDem)
+    registrarDemanda(auxDem);
 }
 
 function registrarDemanda(aux) {
@@ -86,9 +103,60 @@ function registrarDemanda(aux) {
 
     console.log(ubi);
     console.log(dem);
-    
+}
+//distancia
+
+function crearDistancia(aux) {
+    matrizDist = new Array(aux.length);
+
+    for(let i = 0; i < matrizDist.length; i++) {
+        matrizDist[i] = new Array(matrizDist.length);
+    }
+
+    var cont = 0;
+
+    while(cont < matrizDist.length) {
+        for(let a = 0; a < aux.length; a++) {
+            for(let b = 0; b < aux.length; b++) {
+                if(aux[a] != aux[b]) {
+                    matrizDist[cont][b] = aux[b] - aux[a];
+                } else {
+                    matrizDist[cont][b] = 0;
+                }
+            }
+            cont++;
+        }
+    }
+
+    return matrizDist;
 }
 
+function resHipo(X, Y) {
+    var aux = [];
+    let i, j;
 
+    for(i  = 0; i < X.length; i++) {
+        aux[i] = new Array(X.length);
+    }
 
+    for(i = 0; i < X.length; i++) {
+        for(j = 0; j < X.length; j++) {
+            aux[i][j] = Math.hypot(X[i][j], Y[i][j]);
+        }
+    }
+    return aux;
+}
+
+function Distancias() {
+    var distX = crearDistancia(ubi.x);
+    var distY = crearDistancia(ubi.y);
+
+    console.log("Matriz distancia X");
+    console.table(distX);
+    console.log("Matriz distancia Y");
+    console.table(distY);
+
+    matrizDist = resHipo(distX, distY);
+    console.table(matrizDist);
+}
   
