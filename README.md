@@ -38,8 +38,8 @@ es siempre uno y su ubicación es en la coordenada “0,0”.
 por un camión (es decir, los camiones no pueden hacer despachos “a medias). No obstante, un
 camión puede abastecer varios puntos de venta (siempre cuando sean pedidos “completos”).
 
-• En este trabajo, se puede utilizar bases de datos relacionales si se encuentra necesario. Dichos
-motores pueden ser MySQL (Maria DB) 10.1 y/o MS SQL server 2008 R2 y/o PostgreSQL 11.2.
+~~• En este trabajo, se puede utilizar bases de datos relacionales si se encuentra necesario. Dichos
+motores pueden ser MySQL (Maria DB) 10.1 y/o MS SQL server 2008 R2 y/o PostgreSQL 11.2.~~
 
 • El archivo de parámetros debe ser texto plano (un único archivo) donde cada línea es una ubicación
 o coordenada con la siguiente estructura: “T;N;X,Y” donde “T” puede ser “P” o “C” para indicar si es
