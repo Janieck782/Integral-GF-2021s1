@@ -1,6 +1,8 @@
 # Integral-GF-2021s1
 GRAFOS Y LENGUAJES FORMALES - TRABAJO INTEGRAL 
 
+* [Version Web](https://integral-gf2021s1.netlify.app) - Version web de la pagina
+
 La empresa “D” se encarga de transportar productos desde distintos centros de distribución hacia los negocios
 o puntos de venta ubicados en toda la ciudad.
 
