@@ -1,12 +1,14 @@
 body {
-    font-family: 'Noto Sans', sans-serif;
-    width: 100%;
-    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 120%;
+    content: ;
     background-color: #ddeded;
-}
-* {
     padding: 0px;
     margin: 0px;
+}
+* {
+  
     list-style: none;
     text-decoration: none;
 }
@@ -14,6 +16,15 @@ body {
 textarea {
     resize: none;
 }
+.header-section{
+  display: grid;
+  background-color: #92dedc;
+}
+section {
+  width: 100%;
+  min-height: 1000px;
+}
+
 
 
 .header-title{
@@ -24,23 +35,7 @@ textarea {
 }
 
 
-.wave-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background-image: url(../img/wave.png);
-  background-size: 100% 100px;
-}
 
-.wave-container.wave1 {
-  animation: animate 15s linear infinite;
-  z-index: 10;
-  opacity: 1;
-  animation-delay: 0s;
-  bottom: 0;
-}
 @media (min-width: 768px) {
   .archivos {
       display: grid;
@@ -51,15 +46,65 @@ textarea {
 }
 
   .contenedor {
-      background-color: aliceblue;
-      border-radius: 15px;
-      margin: 25px;
-      padding: 5px;
+      background-color: white;
+      
   }
 
 
-  .contenedorheader {
-    background-color: #92dedc;
-    border-radius: 5px;
-    padding: auto;
+ 
+
+.resultado{
+  background-color: #29abc3;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-right: 50px;
+}
+
+.arch{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-left: 50px;
+}
+
+.linea {
+  border-top: 1px solid white;
+  height: 2px;
+  width: 50%;
+  padding-bottom: 20px;
+  margin: 20px auto 0 auto;
+  
+}
+
+button {
+  background-color: #29abc3; 
+  color: white; 
+  border: 2px solid #008CBA;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #29abc3;
+  height: auto;
+  width: 100vw;
+  font-family: "Open Sans";
+  padding-top: ;
+  color: #fff;
+}
+.footer-content{
+  content: flex;
+}
+
+.footer-content p{
+  line-height: 28px;
+  font-size: 20px;
 }

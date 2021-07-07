@@ -31,9 +31,6 @@ function mostrarContenidoDemanda(contenido) {
     elemento.innerHTML = contenido;
 }
 
-
-
-
 function leerContenido() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -41,9 +38,7 @@ function leerContenido() {
             document.getElementById("coordenadas").innerHTML = this.responseText;
         }
     };
-
     xhr.open("GET", "ubicaciones.txt", true);
-
     xhr.send();
 
 }
