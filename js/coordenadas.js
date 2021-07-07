@@ -25,39 +25,66 @@ let auxDem;
 
 function guardarUbicaciones(){
     auxUbi = document.getElementById("coordenadas").value;
-    console.log(auxUbi);
-    //verificarUbicaiones(auxUbi);
-    
+    registrarUbicaiones(auxUbi);
 }
 
-function verificarUbicaiones(aux){
+function registrarUbicaiones(aux){
+    
     let txx = aux.split('\n');
+    let num = txx.length;  
     let txs = [];
     let txt = [];
     let bep = [];
 
-
-    for(let i = 0 ; i < txx.lenght ; i++){
+    for(let i = 0 ; i < num ; i++){
+        console.log(txx[i]);
         txs.push(txx[i]);
     }
 
     for(let j = 0 ; j < txs.length; j++){
         bep.push(txs[j].replace(',',';'));
-    
+        txt.push(bep[j].split(';'))
     }
 
+    for( let m = 0 ; m < txs.length; m++){
+        ubi.t.push(txt[m][0]);
+        ubi.n.push(txt[m][1]);
+        ubi.x.push(Number.parseInt(txt[m][2]));
+        ubi.y.push(Number.parseInt(txt[m][3]));
+    }
 
-    
+console.log(ubi);
 
 }
 
 function guardarDemanda(){
     auxDem = document.getElementById("demanda").value;
     console.log(auxDem);
-    //verificarDemanda(auxDem)
+    registrarDemanda(auxDem)
 }
 
-function verificarDemanda(aux){
-// if ubi.c == auxDem
+function registrarDemanda(aux){
+    let txx = aux.split('\n');
+    let num = txx.length;  
+    let txs = [];
+    let txt = [];
+    let bep = [];
+
+    for(let i = 0 ; i < num ; i++){
+        console.log(txx[i]);
+        txs.push(txx[i]);
+    }
+
+    for(let j = 0 ; j < txs.length; j++){
+        txt.push(txx[j].split(';'))
+    }
+
+    for( let m = 0 ; m < txs.length; m++){
+        dem.c.push(txt[m][0]);
+        dem.p.push(txt[m][1]);
+        dem.n.push(Number.parseInt(txt[m][2]));
+    }
+
+    console.log(dem);
 }
 
