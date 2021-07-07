@@ -1,0 +1,24 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+
+    background-color: #8CF5A8;
+}
+
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url(../img/wave.svg);
+    background-size: 100% 100px;
+}
+
+.wave.wave1 {
+    animation: animate 15s linear infinite;
+    z-index: 10;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
