@@ -43,7 +43,7 @@ function guardar(enlace){
     enlace.disabled = 'disabled';
     console.log("El archivo se ha cargado con exito")
     origen();
-    guardarUbicaciones();
+    guardarUbicaciones()
     guardarDemanda();
 
     iniciarDisplay();//display.js
@@ -68,7 +68,6 @@ function registrarUbicaiones(aux) {
     let bep = [];
 
     for (let i = 0; i < num; i++) {
-
         txs.push(txx[i]);
     }
 

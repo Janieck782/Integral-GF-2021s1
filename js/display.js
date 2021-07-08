@@ -4,7 +4,7 @@ const contUbi = document.querySelector("#exCoordenadas");
 const contDem = document.querySelector("#exDemanda");
 
 function iniciarDisplay(){
-    contenedorUbi();
+    contenedorUbi()
     contenedorDem();
 
 }

@@ -22,9 +22,6 @@ function abrirArchivo2(evento) {
 }
 
 
-
-
-
 function mostrarContenidoDemanda(contenido) {
 
     var elemento = document.getElementById('demanda');

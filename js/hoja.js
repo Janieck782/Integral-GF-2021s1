@@ -3,11 +3,13 @@
 //varibles
 let cantCamimones = 0;
 let carga = [];
+let hojas = "";
 
 
 function iniciarHoja(){
    calcularCamiones(); 
    cargaXcamion();
+   generador(cantCamimones);
 
 }
 
@@ -37,4 +39,7 @@ function cargaXcamion(){
    } 
 }
 
+function centrosXentrega(){
+   
 
+}
