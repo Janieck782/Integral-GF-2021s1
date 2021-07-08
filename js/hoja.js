@@ -34,6 +34,7 @@ function cargaXcamion(){
             aux=0;
          }
       }     
-   }
-   console.log(carga);
+   } 
 }
+
+
