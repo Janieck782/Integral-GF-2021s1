@@ -108,13 +108,13 @@ function registrarDemanda(aux) {
     }
 
     for (let m = 0; m < txs.length; m++) {
-        dem.c.push(txt[m][0]);
-        dem.p.push(txt[m][1]);
+        dem.c.push(Number.parseInt(txt[m][0]));
+        dem.p.push(Number.parseInt(txt[m][1]));
         dem.n.push(Number.parseInt(txt[m][2]));
     }
 
-    console.log(ubi);
-    console.log(dem);
+    console.table(ubi);
+    console.table(dem);
 }
 //distancia
 
@@ -171,5 +171,5 @@ function Distancias() {
     matrizDist = JSON.parse( JSON.stringify( resHipo(distX, distY) ) );
     console.table(matrizDist);
 
-    console.table(ubi);
+    
 }
