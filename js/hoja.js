@@ -31,26 +31,52 @@ function iniciarHoja(){
    rutaXcentro();
    cantidadXp();
    rutaXcamion();
-   //generarCarga();
+   generarCarga();
    crearResultados();
 }
 
 function generarCarga(){
-   ordenada.forEach(cargar)
+   ordenada.forEach(cargar);
 }
 
-function cargar(element,index){
-   let aux = element;
+function cargar(element,index){//arreglar
+   let aux = `${element}`;
    
    
-      aux.split(",");
-      console.log(element)
-      peso=0
-      //nxped
-      for(let i = 0 ; i < aux.length; i++){
-         peso=nXped[Number.parseInt(aux[i].charAt(1))]
-         console.log(peso);
+      ayu=aux.split(",");
+      console.log(ayu);
+      
+      
+     punto=ayu[0]; 
+     if(ayu.length==1){
+        carga.push(ayu[0]);
+     }else{
+      let nombre=""
+      let i
+     for(i = 0 ;i < ayu.length; i++){
+      if(ayu.length == i+1){
+         nombre+=ayu[i];
+         carga.push(nombre);
       }
+
+      if(ayu.length != i+1){
+      let peso = nXped[Number.parseInt(ayu[i].charAt(1))]
+      let peso2 = nXped[Number.parseInt(ayu[i+1].charAt(1))]
+      nombre+=ayu[i];
+         
+      if(peso+peso2>1000){
+         carga.push(nombre)
+         nombre=""
+        }else{
+           nombre=+","
+        }}
+        
+        
+     }
+     
+     console.log(carga);
+   
+   }
       
   
    
@@ -220,11 +246,11 @@ function crearResultados(){
    //rellenar camion
 
    camiXcent.forEach(relleCent)
-
+   carga.reverse();
    centros.reverse();
    for(let i = 0 ; i < totalCami; i++){
       resultado[i][0] = centros.pop();
-      resultado[i][1] = i;
+      resultado[i][1] = carga.pop();
       
    }
    
