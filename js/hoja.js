@@ -209,17 +209,39 @@ function carXcami(element, index) {
    let aux = element.split("+");
    let peso=0;
    let camiones=0;
+
+   aux.sort();
+
+   for(let i = 0; i < aux.length;i++){
+      let b = Number.parseInt(aux[i]);
+      aux[i]=b;
+   }
+
+   console.table(aux);
+
+
+   
    
    for(let i = 0; i < aux.length; i++){
       peso+=aux[i];
+      console.log(camiones)
+      console.log(peso)
+      
       if(i+1!=aux.length){
 
          if((peso+aux[i+1])>1000 ){
            camiones++;
            peso=0;
+         }else{
+            if(peso==1000){
+               camiones++;
+               peso=0;
+            }
          }
       }else{
+         if(peso!=0){
          camiones++;
+      }
       }
    }
    
