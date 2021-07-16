@@ -210,17 +210,16 @@ function carXcami(element, index) {
    let peso=0;
    let camiones=0;
 
-   aux.sort();
+   
 
    for(let i = 0; i < aux.length;i++){
       let b = Number.parseInt(aux[i]);
       aux[i]=b;
    }
 
+   aux.sort();
    console.table(aux);
 
-
-   
    
    for(let i = 0; i < aux.length; i++){
       peso+=aux[i];
@@ -276,6 +275,7 @@ function crearResultados(){
       
    }
    
+   dsplayResultados();
 
    console.log(resultado);   
 }
