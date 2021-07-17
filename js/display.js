@@ -47,3 +47,24 @@ function contenedorDem(){
     }
 
 }
+
+const finalHoja= document.querySelector("#resultadosFinales") 
+
+function dsplayResultados(){
+     var d =  document.createElement("div");
+     console.log("final")
+     d.setAttribute("class","resuf contenedor animate__animated animate__bounceInUp")
+    var tit = document.createElement("h4"); 
+    tit.innerHTML= "Resultados:"
+    d.appendChild(tit);
+    var camiDSI = document.createElement("p");
+    camiDSI.innerHTML = `La cantidad de camiones necesarios es: ${totalCami}`;
+    d.appendChild(camiDSI);
+    for(let i = 0; i<totalCami;i++){
+        let resuff = document.createElement("p");
+        resuff.innerHTML = `${i+1}. EL camion N°${i+1} se dirige a cargar a ${resultado[i][0]} y luego a ${resultado[i][1]}`;
+        d.appendChild(resuff);
+    }
+
+     finalHoja.appendChild(d);
+}

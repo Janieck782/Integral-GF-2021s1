@@ -8,7 +8,7 @@ class ubicacion {
 }
 
 class demanda {
-    constructor(c, p, n) {
+    constructor( c, p, n) {
         this.c = [];
         this.p = [];
         this.n = [];
@@ -31,7 +31,7 @@ let matrizOrigen;
 var errores = false;
 var anuncio;
 
-function origen() {
+function origen(){
     ubi.t.push("E");
     ubi.n.push("D");
     ubi.x.push(0);
@@ -52,16 +52,22 @@ function guardar(enlace) {
         if (errores == false) {
             guardarDemanda();
 
+            verificarC();
+            verificarP();
+            verificarN();
+            console.log(errores);
+
+            if(errores == true) {
+                return 0;
+            }
+
             iniciarDisplay(); //display.js
             iniciarHoja(); //hoja.js funciones de ruta
         } else {
             return 0;
         }
-
     }
-
 }
-
 
 function guardarUbicaciones() {
     auxUbi = document.getElementById("coordenadas").value;
@@ -128,9 +134,8 @@ function registrarUbicaiones(aux) {
 
 function guardarDemanda() {
     auxDem = document.getElementById("demanda").value;
-
+    
     registrarDemanda(auxDem);
-    verificar();
 }
 
 function registrarDemanda(aux) {
@@ -140,6 +145,7 @@ function registrarDemanda(aux) {
     let txt = [];
 
     for (let i = 0; i < num; i++) {
+        
         txs.push(txx[i]);
     }
 
@@ -149,7 +155,9 @@ function registrarDemanda(aux) {
 
     for (let m = 0; m < txs.length; m++) {
         dem.c.push(Number.parseInt(txt[m][0]));
+
         dem.p.push(Number.parseInt(txt[m][1]));
+
         dem.n.push(Number.parseInt(txt[m][2]));
     }
 
@@ -157,25 +165,87 @@ function registrarDemanda(aux) {
     console.table(dem);
 }
 
-function verificar() {
 
+function verificarC() {
+    console.log("verificar C");
+    var aux;
+    var cont = 0;
+
+    for(let i = 0; i < dem.c.length; i++) {
+        aux = parseInt(dem.c[i]);
+        
+        for(let j = 0; j < ubi.t.length; j++) {
+            if("C" == ubi.t[j]) {
+                if(ubi.n[j] == aux) {
+                    cont++;
+                }
+            }
+        }
+
+        if(cont == 0) {
+            alert(aux + " no es una ubicación válida");
+            console.error(aux + " no es una ubicación válida");
+            errores = true;
+            return 0;
+        }
+        cont = 0;
+    }
+}
+
+function verificarP() {
+    var aux;
+    var cont = 0;
+
+    for(let i = 0; i < dem.p.length; i++) {
+        aux = parseInt(dem.p[i]);
+        
+        for(let j = 0; j < ubi.t.length; j++) {
+            if("P" == ubi.t[j]) {
+                if(ubi.n[j] == aux) {
+                    cont++;
+                }
+            }
+        }
+
+        if(cont == 0) {
+            alert(aux + " no es un destino válido");
+            console.error(aux + " no es un destino válido");
+            errores = true;
+            return 0;
+        }
+        cont = 0;
+    }
+}
+
+function verificarN() {
+    console.log(dem.n);
+    for(let i = 0; i < dem.n.length; i++) {
+        console.log(dem.n[i]);
+
+        if(isNaN(dem.n[i])) {
+            alert("Hay una cantidad de productos no valida");
+            console.error("Hay una cantidad de productos no valida");
+            errores = true;
+            return 0;
+        }
+    }
+    
 }
 
 //distancia
-
 function crearDistancia(aux) {
     var distance = new Array(aux.length);
 
-    for (let i = 0; i < distance.length; i++) {
+    for(let i = 0; i < distance.length; i++) {
         distance[i] = new Array(distance.length);
     }
 
     var cont = 0;
 
-    while (cont < distance.length) {
-        for (let a = 0; a < aux.length; a++) {
-            for (let b = 0; b < aux.length; b++) {
-                if (aux[a] != aux[b]) {
+    while(cont < distance.length) {
+        for(let a = 0; a < aux.length; a++) {
+            for(let b = 0; b < aux.length; b++) {
+                if(aux[a] != aux[b]) {
                     distance[cont][b] = aux[b] - aux[a];
                 } else {
                     distance[cont][b] = 0;
@@ -192,12 +262,12 @@ function resHipo(X, Y) {
     var aux = [];
     let i, j;
 
-    for (i = 0; i < X.length; i++) {
+    for(i  = 0; i < X.length; i++) {
         aux[i] = new Array(X.length);
     }
 
-    for (i = 0; i < X.length; i++) {
-        for (j = 0; j < X.length; j++) {
+    for(i = 0; i < X.length; i++) {
+        for(j = 0; j < X.length; j++) {
             aux[i][j] = Math.hypot(X[i][j], Y[i][j]);
         }
     }
@@ -213,8 +283,8 @@ function Distancias() {
     // console.log("Matriz distancia Y");
     // console.table(distY);
 
-    matrizDist = JSON.parse(JSON.stringify(resHipo(distX, distY)));
+    matrizDist = JSON.parse( JSON.stringify( resHipo(distX, distY) ) );
     console.table(matrizDist);
 
-
+    
 }

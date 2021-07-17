@@ -123,3 +123,11 @@ button:hover {
   transform-origin: bottom;
   animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
+
+.resuf{
+  margin-top: 25px;
+  margin-right: 50px;
+  margin-left: 50px;
+  border-radius: 20px;
+  padding: 5px;
+}
