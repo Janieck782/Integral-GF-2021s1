@@ -215,6 +215,9 @@ function carXcami(element, index) {
    for(let i = 0; i < aux.length;i++){
       let b = Number.parseInt(aux[i]);
       aux[i]=b;
+      if(isNaN(aux[i])){
+         aux[i]=0;
+      }
    }
 
    aux.sort();
@@ -243,7 +246,8 @@ function carXcami(element, index) {
       }
       }
    }
-   
+   console.log(camiones)
+
    camiXcent[index]=camiones;
    
 }
