@@ -43,11 +43,11 @@ function cargar(element,index){//arreglar
    let aux = `${element}`;
    
    
-      ayu=aux.split(",");
+      var ayu = aux.split(",");
       console.log(ayu);
       
       
-     punto=ayu[0]; 
+   //   var punto = ayu[0]; 
      if(ayu.length==1){
         carga.push(ayu[0]);
      }else{
@@ -143,7 +143,7 @@ function support(arreglo,index,primer){
 }
 
 function ordenar(element, index){
-   aux = element.split(",");
+   var aux = element.split(",");
    aux.pop();
 
    
@@ -153,8 +153,8 @@ function ordenar(element, index){
 }
 
 function devDistancia(st1,st2){
-   aux1 = resumen.c.indexOf(st1) 
-   aux2 = resumen.c.indexOf(st2)
+   var aux1 = resumen.c.indexOf(st1) 
+   var aux2 = resumen.c.indexOf(st2)
    return matrizDist[aux1][aux2] 
 
 }

@@ -17,7 +17,7 @@ function contenedorUbi(){
     
     contUbi.appendChild(texto);
 
-    for(i = 0 ; i < aux ; i++ ){
+    for(let i = 0 ; i < aux ; i++ ){
     var txt = document.createElement("p");
     let t1 = ubi.t[i];
     let t2 = ubi.n[i];
@@ -37,7 +37,7 @@ function contenedorDem(){
     
     contDem.appendChild(texto);
 
-    for(i = 0 ; i < aux ; i++ ){
+    for(let i = 0 ; i < aux ; i++ ){
     var txt = document.createElement("p");
     let t1 = dem.c[i];
     let t2 = dem.p[i];
