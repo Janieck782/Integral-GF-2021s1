@@ -43,11 +43,11 @@ function cargar(element,index){//arreglar
    let aux = `${element}`;
    
    
-      ayu=aux.split(",");
+      var ayu = aux.split(",");
       console.log(ayu);
       
       
-     punto=ayu[0]; 
+   //   var punto = ayu[0]; 
      if(ayu.length==1){
         carga.push(ayu[0]);
      }else{
@@ -77,6 +77,9 @@ function cargar(element,index){//arreglar
      console.log(carga);
    
    }
+      
+  
+   
 
 }
 
@@ -140,7 +143,7 @@ function support(arreglo,index,primer){
 }
 
 function ordenar(element, index){
-   aux = element.split(",");
+   var aux = element.split(",");
    aux.pop();
 
    
@@ -150,8 +153,8 @@ function ordenar(element, index){
 }
 
 function devDistancia(st1,st2){
-   aux1 = resumen.c.indexOf(st1) 
-   aux2 = resumen.c.indexOf(st2)
+   var aux1 = resumen.c.indexOf(st1) 
+   var aux2 = resumen.c.indexOf(st2)
    return matrizDist[aux1][aux2] 
 
 }
@@ -195,6 +198,7 @@ function cargaXcentro(){
   cc.forEach(carXcami);
   
   camiXcent.forEach(camionesTotal);
+
 }
 
 function camionesTotal(element){
@@ -204,15 +208,21 @@ function camionesTotal(element){
 function carXcami(element, index) {
    let aux = element.split("+");
    let peso=0;
-   let camiones=0;   
+   let camiones=0;
+
+   
 
    for(let i = 0; i < aux.length;i++){
       let b = Number.parseInt(aux[i]);
       aux[i]=b;
+      if(isNaN(aux[i])){
+         aux[i]=0;
+      }
    }
 
    aux.sort();
    console.table(aux);
+
    
    for(let i = 0; i < aux.length; i++){
       peso+=aux[i];
@@ -236,7 +246,8 @@ function carXcami(element, index) {
       }
       }
    }
-   
+   console.log(camiones)
+
    camiXcent[index]=camiones;
    
 }

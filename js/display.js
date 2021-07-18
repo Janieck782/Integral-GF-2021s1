@@ -17,7 +17,7 @@ function contenedorUbi(){
     
     contUbi.appendChild(texto);
 
-    for(i = 0 ; i < aux ; i++ ){
+    for(let i = 0 ; i < aux ; i++ ){
     var txt = document.createElement("p");
     let t1 = ubi.t[i];
     let t2 = ubi.n[i];
@@ -37,7 +37,7 @@ function contenedorDem(){
     
     contDem.appendChild(texto);
 
-    for(i = 0 ; i < aux ; i++ ){
+    for(let i = 0 ; i < aux ; i++ ){
     var txt = document.createElement("p");
     let t1 = dem.c[i];
     let t2 = dem.p[i];
@@ -48,8 +48,8 @@ function contenedorDem(){
 
 }
 
-const finalHoja= document.querySelector("#resultadosFinales") 
 
+const finalHoja= document.querySelector("#resultadosFinales") 
 function dsplayResultados(){
      var d =  document.createElement("div");
      console.log("final")
@@ -66,5 +66,13 @@ function dsplayResultados(){
         d.appendChild(resuff);
     }
 
+
+
+
+
+
      finalHoja.appendChild(d);
+
+    
+
 }
