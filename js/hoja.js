@@ -51,30 +51,34 @@ function cargar(element,index){//arreglar
      if(ayu.length==1){
         carga.push(ayu[0]);
      }else{
-      let nombre=""
-      let i
-     for(i = 0 ;i < ayu.length; i++){
-      if(ayu.length == i+1){
-         nombre+=ayu[i];
-         carga.push(nombre);
-      }
-
+      let nombre="";
+      let peso = 0;
+     for(let i = 0 ;i < ayu.length; i++){
+        peso +=nXped[Number.parseInt(ayu[i].charAt(1))]
+      
+     
       if(ayu.length != i+1){
-      let peso = nXped[Number.parseInt(ayu[i].charAt(1))]
-      let peso2 = nXped[Number.parseInt(ayu[i+1].charAt(1))]
-      nombre+=ayu[i];
+            //let peso += nXped[Number.parseInt(ayu[i].charAt(1))]
+            let peso2 = nXped[Number.parseInt(ayu[i+1].charAt(1))]
          
-      if(peso+peso2>1000){
-         carga.push(nombre)
-         nombre=""
-        }else{
-           nombre=+","
-        }}
-        
-        
+            nombre+=ayu[i];
+
+         if(peso+peso2>1000){
+            carga.push(nombre)
+            nombre = ""
+         }else{
+            nombre+="->"
+         }
+     }else{
+      nombre+=ayu[i];
+      carga.push(nombre);
+
+     }
+     console.log(nombre);
+
      }
      
-     console.log(carga);
+     console.table(carga);
    
    }
       

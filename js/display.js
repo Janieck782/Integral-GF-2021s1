@@ -23,7 +23,7 @@ function contenedorUbi(){
     let t2 = ubi.n[i];
     let t3 = ubi.x[i];
     let t4 = ubi.y[i];
-    txt.innerHTML = `${i+1}.${t1}-${t2}, X:${t3} Y:${t4}`;
+    txt.innerHTML = `${i+1}.${t1}${t2}, X:${t3} Y:${t4}`;
     contUbi.appendChild(txt);
     }
 
@@ -42,7 +42,7 @@ function contenedorDem(){
     let t1 = dem.c[i];
     let t2 = dem.p[i];
     let t3 = dem.n[i];
-    txt.innerHTML = `${i+1}. P-${t2} requiere un cargamento de ${t3}, desde C-${t1}`;
+    txt.innerHTML = `${i+1}. P${t2} requiere un cargamento de ${t3}, desde C${t1}`;
     contDem.appendChild(txt);
     }
 
@@ -62,7 +62,7 @@ function dsplayResultados(){
     d.appendChild(camiDSI);
     for(let i = 0; i<totalCami;i++){
         let resuff = document.createElement("p");
-        resuff.innerHTML = `${i+1}. EL camion N°${i+1} se dirige a cargar a ${resultado[i][0]} y luego a ${resultado[i][1]}`;
+        resuff.innerHTML = `-Ruta N°${i+1}: ED->${resultado[i][0]}->${resultado[i][1]}->ED`;
         d.appendChild(resuff);
     }
 
