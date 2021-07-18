@@ -54,20 +54,20 @@ function cargar(element,index){//arreglar
       let nombre="";
       let peso = 0;
      for(let i = 0 ;i < ayu.length; i++){
-        peso +=nXped[Number.parseInt(ayu[i].charAt(1))]
+        peso +=nXped[Number.parseInt(ayu[i].charAt(1))];
       
      
       if(ayu.length != i+1){
             //let peso += nXped[Number.parseInt(ayu[i].charAt(1))]
-            let peso2 = nXped[Number.parseInt(ayu[i+1].charAt(1))]
+            let peso2 = nXped[Number.parseInt(ayu[i+1].charAt(1))];
          
             nombre+=ayu[i];
 
          if(peso+peso2>1000){
-            carga.push(nombre)
-            nombre = ""
+            carga.push(nombre);
+            nombre = "";
          }else{
-            nombre+="->"
+            nombre+="->";
          }
      }else{
       nombre+=ayu[i];
@@ -157,9 +157,9 @@ function ordenar(element, index){
 }
 
 function devDistancia(st1,st2){
-   var aux1 = resumen.c.indexOf(st1) 
-   var aux2 = resumen.c.indexOf(st2)
-   return matrizDist[aux1][aux2] 
+   var aux1 = resumen.c.indexOf(st1);
+   var aux2 = resumen.c.indexOf(st2);
+   return matrizDist[aux1][aux2];
 
 }
 
@@ -175,11 +175,11 @@ function cantidadXp(){
 function rutaXcentro(){
    
    for(let y=0; y<dem.c.length; y++) {
-      pedXcent[dem.c[y]] = ""
+      pedXcent[dem.c[y]] = "";
   }
 
    for(let y=0; y<dem.c.length; y++) {
-       pedXcent[dem.c[y]] += `P${dem.p[y]},`
+       pedXcent[dem.c[y]] += `P${dem.p[y]},`;
    }
    console.log("p x c");
    console.table(pedXcent)
@@ -230,8 +230,8 @@ function carXcami(element, index) {
    
    for(let i = 0; i < aux.length; i++){
       peso+=aux[i];
-      console.log(camiones)
-      console.log(peso)
+      console.log(camiones);
+      console.log(peso);
       
       if(i+1!=aux.length){
 
@@ -250,7 +250,7 @@ function carXcami(element, index) {
       }
       }
    }
-   console.log(camiones)
+   console.log(camiones);
 
    camiXcent[index]=camiones;
    
@@ -260,7 +260,7 @@ function iniciarLugar(){
 
    for( let i = 0 ; i < ubi.t.length ; i++ ){
       resumen.c.push(ubi.t[i]+ubi.n[i]);
-      resumen.i.push(i)
+      resumen.i.push(i);
    }
    console.log(resumen);
 
@@ -274,7 +274,7 @@ function crearResultados(){
 
    //rellenar camion
 
-   camiXcent.forEach(relleCent)
+   camiXcent.forEach(relleCent);
    carga.reverse();
    centros.reverse();
    for(let i = 0 ; i < totalCami; i++){
@@ -290,7 +290,7 @@ function crearResultados(){
 
 function relleCent(element, index){
    for(let i=0;i<element;i++){
-      centros.push(`C${index}`)
+      centros.push(`C${index}`);
    }
 }
 

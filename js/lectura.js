@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
 
     document.getElementById('productos').addEventListener('change', abrirArchivo2);
-    
+
 });
 
 window.onload = function () {
@@ -37,5 +37,4 @@ function leerContenido() {
     };
     xhr.open("GET", "ubicaciones.txt", true);
     xhr.send();
-
 }
