@@ -38,38 +38,6 @@ function origen() {
     ubi.y.push(0);
 }
 
-
-function guardar(enlace) {
-    let aus = document.getElementById("demanda").value;
-    if (aus == "") {
-        alert("No se ha cargado el archivo")
-    } else {
-        enlace.disabled = 'disabled';
-        console.log("El archivo se ha cargado con exito")
-        origen();
-        guardarUbicaciones();
-
-        if (errores == false) {
-            guardarDemanda();
-
-            verificarC();
-            verificarP();
-            verificarN();
-            console.log(errores);
-
-            if (errores == true) {
-                return 0;
-            }
-
-            iniciarDisplay(); //display.js
-            iniciarHoja(); //hoja.js funciones de ruta
-        } else {
-            return 0;
-        }
-    }
-}
-
-
 function guardarUbicaciones() {
     auxUbi = document.getElementById("coordenadas").value;
     registrarUbicaiones(auxUbi);
@@ -89,7 +57,7 @@ function registrarUbicaiones(aux) {
 
     for (let j = 0; j < txs.length; j++) {
         bep.push(txs[j].replace(',', ';'));
-        txt.push(bep[j].split(';'))
+        txt.push(bep[j].split(';'));
     }
 
     for (let m = 0; m < txs.length; m++) {
@@ -97,7 +65,7 @@ function registrarUbicaiones(aux) {
             ubi.t.push(txt[m][0]);
         } else {
             alert("*" + txt[m][0] + "* no es una locación válida. Verifique el archivo *UBICACIONES.txt* e intentelo nuevamente.");
-            console.error("*" + txt[m][0] + "* no es una locación válida. Verifique el archivo *UBICACIONES.txt* e intentelo nuevamente.")
+            console.error("*" + txt[m][0] + "* no es una locación válida. Verifique el archivo *UBICACIONES.txt* e intentelo nuevamente.");
             errores = true;
             return 0;
         }
@@ -151,7 +119,7 @@ function registrarDemanda(aux) {
     }
 
     for (let j = 0; j < txs.length; j++) {
-        txt.push(txx[j].split(';'))
+        txt.push(txx[j].split(';'));
     }
 
     for (let m = 0; m < txs.length; m++) {
@@ -284,6 +252,34 @@ function Distancias() {
 
     matrizDist = JSON.parse(JSON.stringify(resHipo(distX, distY)));
     console.table(matrizDist);
+}
 
+function guardar(enlace) {
+    let aus = document.getElementById("demanda").value;
+    if (aus == "") {
+        alert("No se ha cargado el archivo");
+    } else {
+        enlace.disabled = 'disabled';
+        console.log("El archivo se ha cargado con exito");
+        origen();
+        guardarUbicaciones();
 
+        if (errores == false) {
+            guardarDemanda();
+
+            verificarC();
+            verificarP();
+            verificarN();
+            console.log(errores);
+
+            if (errores == true) {
+                return 0;
+            }
+
+            iniciarDisplay(); //display.js
+            iniciarHoja(); //hoja.js funciones de ruta
+        } else {
+            return 0;
+        }
+    }
 }
