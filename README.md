@@ -2,7 +2,7 @@
 GRAFOS Y LENGUAJES FORMALES - TRABAJO INTEGRAL 
 
 * [Version Web](https://integral-gf2021s1.netlify.app) - Version web de la pagina
-* * [Manual de instalacion](https://www.docdroid.net/780p5R6/pauta-g6-pdf) - Manual para la instalacion de la pagina en un servidor local
+* [Manual de instalacion](https://www.docdroid.net/780p5R6/pauta-g6-pdf) - Manual para la instalacion de la pagina en un servidor local
 
 La empresa “D” se encarga de transportar productos desde distintos centros de distribución hacia los negocios
 o puntos de venta ubicados en toda la ciudad.
